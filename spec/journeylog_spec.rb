@@ -38,6 +38,21 @@ describe JourneyLog do
     end
   end
 
+  describe '#journeys' do
+
+    it 'returns a list of journeys' do
+      subject.start(entry_station)
+      subject.finish(exit_station)
+      subject.start(exit_station)
+      subject.finish(entry_station)
+
+      expected_list = [ {in: entry_station, out: exit_station}, {in: exit_station, out: entry_station} ]
+
+      expect(subject.journeys).to eq expected_list
+    end
+
+  end
+
 
 
 

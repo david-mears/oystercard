@@ -21,4 +21,12 @@ attr_reader :journey_list
     @journey_list[-1].current_journey
   end
 
+  def journeys
+    output = []
+    @journey_list.each { |journey|
+      output.push(journey.current_journey)
+    }
+    return output
+  end
+
 end
