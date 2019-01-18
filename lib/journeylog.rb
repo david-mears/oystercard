@@ -13,4 +13,12 @@ attr_reader :journey_list
     @journey_list << @journey_class.new(entry_station)
   end
 
+  def finish(exit_station)
+    @journey_list[-1].exit_station=(exit_station)
+  end
+
+  def current_journey
+    @journey_list[-1].current_journey
+  end
+
 end
